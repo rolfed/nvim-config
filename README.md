@@ -8,4 +8,6 @@ PDE Nvim Configuration
 <leader>pf - find file - Telescope - Find files in project
 <C-p> - git files - Telescope - Find tracked files by git
 <leader>ps - grep string - Telescope - Grep all files
+<leader>a - add file - Harpoon - Add file to harpoon
+<C-e> - toggle quick menu - View files in harpoon
 
