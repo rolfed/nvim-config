@@ -4,4 +4,4 @@ PDE Nvim Configuration
 
 
 # Keybinding
-pf - project file - Telescope - Find files in project
+<leader>pf - project file - Telescope - Find files in project
