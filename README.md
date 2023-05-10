@@ -10,4 +10,8 @@ PDE Nvim Configuration
 <leader>ps - grep string - Telescope - Grep all files
 <leader>a - add file - Harpoon - Add file to harpoon
 <C-e> - toggle quick menu - View files in harpoon
+<C-h> - toggle to 1 - View file in buffer 1
+
+
+
 
