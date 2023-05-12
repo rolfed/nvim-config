@@ -27,7 +27,6 @@ vim.keymap.set("n", "<leader>Y", "\"+y")
 -- Prevent accidental exiting
 vim.keymap.set("n", "Q", "<nop>")
 
--- Switch Projects
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Format file
