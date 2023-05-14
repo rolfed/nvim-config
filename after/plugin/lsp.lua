@@ -50,6 +50,8 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.goto_next() end, opts)
 	-- rename / refactor
 	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+	-- code action
+	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
 end)
 
 lsp.setup()
