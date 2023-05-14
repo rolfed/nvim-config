@@ -27,30 +27,35 @@ return require('packer').startup(function(use)
 				requires = {
 						-- LSP Support
 						{'neovim/nvim-lspconfig'},             -- Required
-						{                                      -- Optional
-						'williamboman/mason.nvim',
-						run = function()
-								pcall(vim.cmd, 'MasonUpdate')
-						end,
-				},
-				{'williamboman/mason-lspconfig.nvim'}, -- Optional
+						{	'williamboman/mason.nvim',           -- Optional
+										run = function()
+														pcall(vim.cmd, 'MasonUpdate')
+										end,
+						},
+						{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-				-- Autocompletion
-				{'hrsh7th/nvim-cmp'},     -- Required
-				{'hrsh7th/cmp-nvim-lsp'}, -- Required
-				{'L3MON4D3/LuaSnip'},     -- Required
+						-- Autocompletion
+						{'hrsh7th/nvim-cmp'},     -- Required
+						{'hrsh7th/cmp-nvim-lsp'}, -- Required
+						{'L3MON4D3/LuaSnip'},     -- Required
+						{'rafamadriz/friendly-snippets'},
 				}
 		}
 
 		-- Better Escape
 
-		use {
-
-				"max397574/better-escape.nvim",
+		use { "max397574/better-escape.nvim",
 				config = function()
 						require("better_escape").setup()
 				end,
 		}
+
+		-- Surround Plugin
+		use({ "kylechui/nvim-surround", tag = "*" })
+
+		-- Custom NVIM plugins
+		-- exploritory
+		use "/Users/dannielrolfe/repos/stackmap.nvim"
 
 
 end)
