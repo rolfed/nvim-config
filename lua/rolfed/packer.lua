@@ -2,11 +2,16 @@ return require('packer').startup(function(use)
 		-- Packer can manage itself
 		use 'wbthomason/packer.nvim'
 
-		use {
-				'nvim-telescope/telescope.nvim', tag = '0.1.1',
-				-- or                            , branch = '0.1.x',
-				requires = { {'nvim-lua/plenary.nvim'} }
-		}
+        use {
+            'nvim-telescope/telescope.nvim', tag = '0.1.4',
+            -- or                            , branch = '0.1.x',
+            requires = {
+                {'nvim-lua/plenary.nvim'},
+                { "nvim-telescope/telescope-live-grep-args.nvim" }
+            },
+            config = function()
+                require('telescope').load_extension('live_grep_args')
+        }
 
 		use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
 				vim.cmd('colorscheme rose-pine')
@@ -52,11 +57,6 @@ return require('packer').startup(function(use)
 
 		-- Surround Plugin
 		use({ "kylechui/nvim-surround", tag = "*" })
-
-		-- Custom NVIM plugins
-		-- exploritory
-		use "/Users/dannielrolfe/repos/stackmap.nvim"
-
 
 end)
 
