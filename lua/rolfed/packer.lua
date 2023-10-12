@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
             },
             config = function()
                 require('telescope').load_extension('live_grep_args')
+            end
         }
 
 		use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
@@ -57,6 +58,26 @@ return require('packer').startup(function(use)
 
 		-- Surround Plugin
 		use({ "kylechui/nvim-surround", tag = "*" })
+
+        -- Vim Prettier
+        use({
+            "prettier/vim-prettier",
+            run = "yarn install --frozen-lockfile --production",
+            ft = {
+                "javascript",
+                "typescript",
+                "css",
+                "less",
+                "scss",
+                "json",
+                "graphql",
+                "markdown",
+                "vue",
+                "svelte",
+                "yaml",
+                "html",
+            },
+	})
 
 end)
 
