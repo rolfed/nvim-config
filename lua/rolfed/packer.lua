@@ -1,3 +1,4 @@
+
 return require('packer').startup(function(use)
 		-- Packer can manage itself
 		use 'wbthomason/packer.nvim'
@@ -11,6 +12,7 @@ return require('packer').startup(function(use)
             },
             config = function()
                 require('telescope').load_extension('live_grep_args')
+            end
         }
 
         use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
@@ -57,4 +59,7 @@ return require('packer').startup(function(use)
 
 		-- Surround Plugin
 		use({ "kylechui/nvim-surround", tag = "*" })
+
+        -- Code Folding Utility
+        use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end)
