@@ -1,4 +1,3 @@
-
 return require('packer').startup(function(use)
 		-- Packer can manage itself
 		use 'wbthomason/packer.nvim'
@@ -35,9 +34,9 @@ return require('packer').startup(function(use)
 						-- LSP Support
 						{'neovim/nvim-lspconfig'},             -- Required
 						{	'williamboman/mason.nvim',           -- Optional
-										run = function()
-														pcall(vim.cmd, 'MasonUpdate')
-										end,
+                            run = function()
+                                pcall(vim.cmd, 'MasonUpdate')
+                            end,
 						},
 						{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
@@ -61,5 +60,10 @@ return require('packer').startup(function(use)
 		use({ "kylechui/nvim-surround", tag = "*" })
 
         -- Code Folding Utility
-        use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+        use ({'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'})
+
+        -- Git Signs
+        use ('lewis6991/gitsigns.nvim')
+
+
 end)
