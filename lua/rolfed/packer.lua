@@ -65,5 +65,14 @@ return require('packer').startup(function(use)
         -- Git Signs
         use ('lewis6991/gitsigns.nvim')
 
+        -- Which Key
+        use {
+            "folke/which-key.nvim",
+            config = function()
+                vim.o.timeout = true
+                vim.o.timeoutlen = 300
+            end
+        }
+
 
 end)
