@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
             { "nvim-telescope/telescope-live-grep-args.nvim" }
         },
         config = function()
-            require('telescope').load_extension('live_grep_args')
+            require('telescope').load_extension('live_grep_args', 'neorg')
         end
     }
 
@@ -100,18 +100,23 @@ use {
             load = {
                 ["core.defaults"] = {}, -- Loads default modules
                 ["core.concealer"] = {}, -- Allows for use of icons
+                ["core.integrations.telescope"] = {},
                 ["core.dirman"] = { -- Manage Neorg workspaces
                 config = {
                     workspaces = {
                         notes = "~/repos/notes",
                     },
+                    default_workspace = "notes",
                 },
             },
         },
     }
 end,
 run = ":Neorg sync-parsers",
-requires = "nvim-lua/plenary.nvim"  -- You need the plenary library for this plugin
+requires = {
+    "nvim-lua/plenary.nvim",
+    "nvim-neorg/neorg-telescope"
+}  -- You need the plenary library for this plugin
 }
 
 end)
