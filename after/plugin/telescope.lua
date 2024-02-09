@@ -14,3 +14,12 @@ vim.keymap.set("n", "<leader>ps", ":lua require('telescope').extensions.live_gre
 
 -- search help tags
 vim.keymap.set('n', '<C-h>', builtin.help_tags, {})
+
+vim.api.nvim_create_user_command('OpenGitFilesInVSplit', function()
+  vim.cmd('vsplit') -- Split the view vertically
+  require('telescope.builtin').git_files() -- Open Telescope to search Git files
+end, { nargs = 0 })
+vim.api.nvim_set_keymap('n', '<Leader>vg', ':OpenGitFilesInVSplit<CR>', { noremap = true, silent = true })
+
+
+
