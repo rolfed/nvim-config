@@ -53,3 +53,6 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- MdEval
+vim.api.nvim_set_keymap('n', '<leader>c', "<cmd>lua require 'mdeval'.eval_code_block()<CR>", { noremap = true, silent = true })
