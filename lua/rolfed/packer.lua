@@ -99,7 +99,9 @@ use {
             -- Your Neorg configuration here
             load = {
                 ["core.defaults"] = {}, -- Loads default modules
-                ["core.concealer"] = {}, -- Allows for use of icons
+                ["core.concealer"] = {
+                    icon_preset = "diamon",
+                }, -- Allows for use of icons
                 ["core.integrations.telescope"] = {},
                 ["core.dirman"] = { -- Manage Neorg workspaces
                 config = {
