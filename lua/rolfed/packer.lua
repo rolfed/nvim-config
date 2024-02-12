@@ -114,20 +114,19 @@ use {
                 },
                 ["core.journal"] = {
                     config = {
-                        journal_folder = "~/repos/notes/journal"
+                        journal_folder = "journal",
+                        template_name = "template.norg",
+                        use_template = true
                     }
                 },
-                ["core.concealer"] = {
-                    config = {
-                        icon_preset = "diamon",
-                    }
-                }, -- Allows for use of icons
+                ["core.concealer"] = {}, -- Allows for use of icons
                 ["core.presenter"] = {
                     config = {
                         zen_mode = "zen-mode",
                     }
                 },
                 ["core.ui"] = {},
+                ["core.summary"] = {},
 
                 -- Dependencies
                 ["core.integrations.telescope"] = {},

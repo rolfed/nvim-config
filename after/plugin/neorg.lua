@@ -53,10 +53,6 @@ vim.api.nvim_set_keymap('n', '<Leader>th', ":Neorg command todo hold<CR>", { nor
 -- Toggle Canceled 
 vim.api.nvim_set_keymap('n', '<Leader>tc', ":Neorg command todo cancel<CR>", { noremap = true, silent = true })
 
--- Toggle Uncertain
--- Todo implement
--- vim.api.nvim_set_keymap('n', '<Leader>tu', ":Neorg command todo uncertain<CR>", { noremap = true, silent = true })
-
 -- Inject Metadata
 vim.api.nvim_set_keymap('n', '<Leader>nm', "<cmd>Neorg inject-metadata<CR>", { noremap = true, silent = true })
 
