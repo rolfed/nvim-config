@@ -99,18 +99,38 @@ use {
             -- Your Neorg configuration here
             load = {
                 ["core.defaults"] = {}, -- Loads default modules
-                ["core.concealer"] = {
-                    icon_preset = "diamon",
-                }, -- Allows for use of icons
-                ["core.integrations.telescope"] = {},
                 ["core.dirman"] = { -- Manage Neorg workspaces
-                config = {
-                    workspaces = {
-                        notes = "~/repos/notes",
+                    config = {
+                        workspaces = {
+                            work = "~/repos/notes/work",
+                            learning = "~/repos/notes/learning",
+                            ojjlab = "~/repos/notes/learning",
+                        },
+                        default_workspace = "work",
                     },
-                    default_workspace = "notes",
                 },
-            },
+                ["core.journal"] = {
+                    config = {
+                        journal_folder = "~/repos/notes/journal"
+                    }
+                },
+                ["core.concealer"] = {
+                    config = {
+                        icon_preset = "diamon",
+                    }
+                }, -- Allows for use of icons
+                ["core.presenter"] = {},
+                ["core.ui"] = {},
+
+                -- Dependencies
+                ["core.integrations.telescope"] = {},
+                ["core.integrations.treesitter"] = {},
+                ["core.autocommands"] = {},
+                ["core.esupports.hop"] = {},
+                ["core.esupports.metagen"] = {},
+                ["core.mode"] = {},
+                ["core.queries.native"] = {},
+                ["core.ui.calendar"] = {},
         },
     }
 end,
