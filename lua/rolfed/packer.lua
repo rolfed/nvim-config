@@ -107,7 +107,6 @@ use {
                             work = "~/repos/notes/work",
                             learning = "~/repos/notes/learning",
                             ojjlab = "~/repos/notes/learning",
-                            journal = "~/repos/notes/journal",
                         },
                         default_workspace = "work",
                     },
@@ -116,7 +115,8 @@ use {
                     config = {
                         journal_folder = "journal",
                         template_name = "template.norg",
-                        use_template = true
+                        use_template = true,
+                        workspace = "journal",
                     }
                 },
                 ["core.concealer"] = {}, -- Allows for use of icons
