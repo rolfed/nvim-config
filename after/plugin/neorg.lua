@@ -7,6 +7,13 @@ vim.api.nvim_set_keymap('n', '<Leader>nfl', "<cmd>Telescope neorg find_linkable<
 -- Open Index
 vim.api.nvim_set_keymap('n', '<Leader>ni', "<cmd>Neorg index<CR>", { noremap = true, silent = true })
 
+-- Open Neorg Table of Contents
+vim.api.nvim_set_keymap('n', '<Leader>ntoc', "<cmd>Neorg toc right<CR>", { noremap = true, silent = true })
+ 
+-- Switch workspace
+vim.api.nvim_set_keymap('n', '<Leader>nw', "<cmd>Neorg workspace<CR>", { noremap = true, silent = true })
+
+
 -- Open Index in split
 -- set split to right
 vim.o.splitright = true
@@ -15,6 +22,21 @@ vim.api.nvim_create_user_command('OpenIndex', function()
   vim.cmd('vsplit')
   vim.cmd('Neorg index')
 end, {})
+
+----------------------------------------
+-- Journal 
+----------------------------------------
+-- Open Journal TOC
+vim.api.nvim_set_keymap('n', '<Leader>jtoc', "<cmd>Neorg journal toc<CR>", { noremap = true, silent = true })
+
+-- New Journal Entry Today
+vim.api.nvim_set_keymap('n', '<Leader>jt', "<cmd>Neorg journal today<CR>", { noremap = true, silent = true })
+
+-- New Journal Entry Today
+vim.api.nvim_set_keymap('n', '<Leader>jy', "<cmd>Neorg journal yesterday<CR>", { noremap = true, silent = true })
+
+-- New Journal Entry Tomorrow 
+vim.api.nvim_set_keymap('n', '<Leader>jT', "<cmd>Neorg journal tomorrow<CR>", { noremap = true, silent = true })
 
 ----------------------------------------
 -- Todo
@@ -34,6 +56,9 @@ vim.api.nvim_set_keymap('n', '<Leader>tc', ":Neorg command todo cancel<CR>", { n
 -- Toggle Uncertain
 -- Todo implement
 -- vim.api.nvim_set_keymap('n', '<Leader>tu', ":Neorg command todo uncertain<CR>", { noremap = true, silent = true })
+
+-- Inject Metadata
+vim.api.nvim_set_keymap('n', '<Leader>nm', "<cmd>Neorg inject-metadata<CR>", { noremap = true, silent = true })
 
 -- Fix for link rendering issue with conceallevel
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
