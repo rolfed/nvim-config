@@ -91,6 +91,8 @@ config = function()
 end
 })
 
+use ({ 'folke/zen-mode.nvim'})
+
 -- Neorg
 use {
     "nvim-neorg/neorg",
@@ -105,6 +107,7 @@ use {
                             work = "~/repos/notes/work",
                             learning = "~/repos/notes/learning",
                             ojjlab = "~/repos/notes/learning",
+                            journal = "~/repos/notes/journal",
                         },
                         default_workspace = "work",
                     },
@@ -119,7 +122,11 @@ use {
                         icon_preset = "diamon",
                     }
                 }, -- Allows for use of icons
-                ["core.presenter"] = {},
+                ["core.presenter"] = {
+                    config = {
+                        zen_mode = "zen-mode",
+                    }
+                },
                 ["core.ui"] = {},
 
                 -- Dependencies
