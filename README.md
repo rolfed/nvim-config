@@ -1,5 +1,4 @@
 PDE Nvim Configuration
-
 # Installation Directions
 
 
