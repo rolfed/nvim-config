@@ -97,13 +97,12 @@ use ({
 })
 
 -- Noice
--- use {
---     'folke/noice.nvim',
---     dependencies = {
---          "MunifTanjim/nui.nvim",
---          "rcarriga/nvim-notify",
---     }
--- }
+use {
+    'folke/noice.nvim',
+    requires = {
+         "MunifTanjim/nui.nvim",
+    }
+}
 
 -- Lualine
 use {
