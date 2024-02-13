@@ -57,3 +57,6 @@ end)
 
 -- MdEval
 vim.api.nvim_set_keymap('n', '<leader>c', "<cmd>lua require 'mdeval'.eval_code_block()<CR>", { noremap = true, silent = true })
+
+-- Zen Mode
+vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>")

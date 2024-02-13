@@ -91,7 +91,25 @@ config = function()
 end
 })
 
-use ({ 'folke/zen-mode.nvim'})
+-- Zen Mod
+use ({
+    'folke/zen-mode.nvim',
+})
+
+-- Noice
+-- use {
+--     'folke/noice.nvim',
+--     dependencies = {
+--          "MunifTanjim/nui.nvim",
+--          "rcarriga/nvim-notify",
+--     }
+-- }
+
+-- Lualine
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
 
 -- Neorg
 use {
@@ -116,7 +134,8 @@ use {
                         journal_folder = "journal",
                         template_name = "template.norg",
                         use_template = true,
-                        workspace = "journal",
+                        workspace = "work",
+                        strategy = "flat",
                     }
                 },
                 ["core.concealer"] = {}, -- Allows for use of icons
@@ -126,7 +145,17 @@ use {
                     }
                 },
                 ["core.ui"] = {},
-                ["core.summary"] = {},
+                ["core.qol.toc"] = {
+                    config = {
+                        close_after_use = true,
+                        sync_cursurline = true,
+                    }
+                },
+                ["core.summary"] = {
+                    config = {
+                        strategy = "default",
+                    }
+                },
 
                 -- Dependencies
                 ["core.integrations.telescope"] = {},
@@ -137,14 +166,14 @@ use {
                 ["core.mode"] = {},
                 ["core.queries.native"] = {},
                 ["core.ui.calendar"] = {},
-        },
-    }
-end,
-run = ":Neorg sync-parsers",
-requires = {
-    "nvim-lua/plenary.nvim",
-    "nvim-neorg/neorg-telescope"
-}  -- You need the plenary library for this plugin
+            },
+        }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neorg/neorg-telescope"
+    }  -- You need the plenary library for this plugin
 }
 
 end)
