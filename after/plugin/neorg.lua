@@ -64,3 +64,9 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*.norg"},
   command = "set conceallevel=3"
 })
+
+
+----------------------------------------
+-- Looking Glass 
+----------------------------------------
+vim.api.nvim_set_keymap('n', '<leader>ee', "<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>", { noremap = true, silent = true })

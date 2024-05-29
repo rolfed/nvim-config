@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
         requires = {
-            {'nvim-lua/plenary.nvim'},
+            { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-live-grep-args.nvim" }
         },
         config = function()
@@ -100,14 +100,14 @@ use ({
 use {
     'folke/noice.nvim',
     requires = {
-         "MunifTanjim/nui.nvim",
+        "MunifTanjim/nui.nvim",
     }
 }
 
 -- Lualine
 use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
 
 -- Neorg
@@ -165,6 +165,7 @@ use {
                 ["core.mode"] = {},
                 ["core.queries.native"] = {},
                 ["core.ui.calendar"] = {},
+                ["core.looking-glass"] = {},
             },
         }
     end,
