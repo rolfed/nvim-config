@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
             { "nvim-telescope/telescope-live-grep-args.nvim" }
         },
         config = function()
-            require('telescope').load_extension('live_grep_args', 'neorg')
+            require('telescope').load_extension('live_grep_args')
         end
     }
 
@@ -110,70 +110,31 @@ use {
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
 
--- Neorg
-use {
-    "nvim-neorg/neorg",
-    config = function()
-        require('neorg').setup {
-            -- Your Neorg configuration here
-            load = {
-                ["core.defaults"] = {}, -- Loads default modules
-                ["core.dirman"] = { -- Manage Neorg workspaces
-                    config = {
-                        workspaces = {
-                            work = "~/repos/notes/work",
-                            learning = "~/repos/notes/learning",
-                            ojjlab = "~/repos/notes/learning",
-                        },
-                        default_workspace = "work",
+-- Obsedian
+use ({
+        "epwalsh/obsidian.nvim",
+        tag = "*",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            require("obsidian").setup({
+                workspaces = {
+                    {
+                        name = "learning",
+                        path = "~/repos/notes/learning",
+                    },
+                    {
+                        name = "work",
+                        path = "~/repos/notes/work",
+                    },
+                    {
+                        name = "personal",
+                        path = "~/repos/notes/ojjlab",
                     },
                 },
-                ["core.journal"] = {
-                    config = {
-                        journal_folder = "journal",
-                        template_name = "template.norg",
-                        use_template = true,
-                        workspace = "work",
-                        strategy = "flat",
-                    }
-                },
-                ["core.concealer"] = {}, -- Allows for use of icons
-                ["core.presenter"] = {
-                    config = {
-                        zen_mode = "zen-mode",
-                    }
-                },
-                ["core.ui"] = {},
-                ["core.qol.toc"] = {
-                    config = {
-                        close_after_use = true,
-                        sync_cursurline = true,
-                    }
-                },
-                ["core.summary"] = {
-                    config = {
-                        strategy = "default",
-                    }
-                },
-
-                -- Dependencies
-                ["core.integrations.telescope"] = {},
-                ["core.integrations.treesitter"] = {},
-                ["core.autocommands"] = {},
-                ["core.esupports.hop"] = {},
-                ["core.esupports.metagen"] = {},
-                ["core.mode"] = {},
-                ["core.queries.native"] = {},
-                ["core.ui.calendar"] = {},
-                ["core.looking-glass"] = {},
-            },
-        }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-neorg/neorg-telescope"
-    }  -- You need the plenary library for this plugin
-}
+        })
+    end
+})
 
 end)

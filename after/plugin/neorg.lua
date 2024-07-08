@@ -9,9 +9,7 @@ vim.api.nvim_set_keymap('n', '<Leader>ni', "<cmd>Neorg index<CR>", { noremap = t
 
 -- Open Neorg Table of Contents
 vim.api.nvim_set_keymap('n', '<Leader>ntoc', "<cmd>Neorg toc right<CR>", { noremap = true, silent = true })
- 
--- Switch workspace
-vim.api.nvim_set_keymap('n', '<Leader>nw', "<cmd>Neorg workspace<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>nw', "<cmd>Neorg workspace<CR>", { noremap = true, silreadlineent = true })
 
 
 -- Open Index in split
